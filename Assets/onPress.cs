@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class onPress : MonoBehaviour
@@ -35,6 +33,9 @@ public class onPress : MonoBehaviour
             PlaySound();
             // Change color to pressedColor
             GetComponent<Renderer>().material.color = pressedColor;
+
+            // Print the name of the GameObject when the key is pressed
+            Debug.Log(gameObject.name + " pressed");
         }
 
         if (Input.GetKeyUp(keyToPress))
@@ -61,6 +62,8 @@ public class onPress : MonoBehaviour
     {
         if (sound)
         {
+            // Stop any currently playing sound before playing a new one
+            audioSource.Stop();
             audioSource.PlayOneShot(sound);
             Debug.Log("Sound Played");
         }
