@@ -2549,7 +2549,7 @@ MonoBehaviour:
   destroyCoordinate: -2.3
   scaleMultiplier: 1
   spawnKey: 120
-  parentColor: {r: 0, g: 0, b: 0, a: 0}
+  parentColor: {r: 0.8037735, g: 0.24719821, b: 0.7118619, a: 0}
 --- !u!1 &395151902 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2234811440987334085, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -7217,7 +7217,7 @@ MonoBehaviour:
   destroyCoordinate: -2.3
   scaleMultiplier: 1
   spawnKey: 122
-  parentColor: {r: 0, g: 0, b: 0, a: 0}
+  parentColor: {r: 0.8037735, g: 0.24719821, b: 0.7118619, a: 0}
 --- !u!1 &2088434972 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -445369854190344026, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
