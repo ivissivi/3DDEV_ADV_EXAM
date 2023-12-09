@@ -1,42 +1,74 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class pressKey : MonoBehaviour
+public class PressKey : MonoBehaviour
 {
-    public KeyCode keyToHold = KeyCode.Space; // Change this to the desired key
+    public GameObject keyA;
+    public GameObject keyB;
+    public GameObject keyC;
 
-    public float moveDistance = 0.00001f; // Adjust this value for the distance you want to move the object
+    public AudioClip soundA;
+    public AudioClip soundB;
+    public AudioClip soundC;
 
-    private bool isKeyPressed = false;
-    private Vector3 initialPosition;
+    private Dictionary<KeyCode, GameObject> keysPressed = new Dictionary<KeyCode, GameObject>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Store the initial position of the object
-        initialPosition = transform.position;
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        // Check if the specified key is being held down
-        if (Input.GetKey(keyToHold))
-        {
-            isKeyPressed = true;
-        }
-        else
-        {
-            isKeyPressed = false;
+        CheckKeyPress(KeyCode.A, keyA, soundA);
+        CheckKeyPress(KeyCode.B, keyB, soundB);
+        CheckKeyPress(KeyCode.C, keyC, soundC);
 
-            // If the key is released, move the object back to its initial position
-            transform.position = initialPosition;
+        CheckKeyRelease(KeyCode.A);
+        CheckKeyRelease(KeyCode.B);
+        CheckKeyRelease(KeyCode.C);
+    }
+
+    void CheckKeyPress(KeyCode keyCode, GameObject keyObject, AudioClip sound)
+    {
+        if (Input.GetKeyDown(keyCode) && !keysPressed.ContainsKey(keyCode))
+        {
+            keysPressed[keyCode] = keyObject;
+            StartCoroutine(TriggerKeyPress(keyObject, sound));
+        }
+    }
+
+    void CheckKeyRelease(KeyCode keyCode)
+    {
+        if (Input.GetKeyUp(keyCode) && keysPressed.ContainsKey(keyCode))
+        {
+            GameObject keyObject = keysPressed[keyCode];
+            keysPressed.Remove(keyCode);
+            StopCoroutine(TriggerKeyPress(keyObject, null));
+        }
+    }
+
+    IEnumerator TriggerKeyPress(GameObject key, AudioClip sound)
+    {
+
+        Vector3 originalScale = key.transform.localScale;
+        Color originalColor = key.GetComponent<Renderer>().material.color;
+
+        while (true)
+        {
+            key.transform.localScale *= 0.9f;
+            key.GetComponent<Renderer>().material.color = Color.gray;
+
+            if (sound != null)
+            {
+                AudioSource.PlayClipAtPoint(sound, key.transform.position);
+            }
+
+            yield return null;
+
+            if (!keysPressed.ContainsValue(key))
+            {
+                break;
+            }
         }
 
-        // If the key is held down, move the object down by a bit along the Y-axis
-        if (isKeyPressed)
-        {
-            // Move the object down by 'moveDistance' along the Y-axis
-            transform.Translate(Vector3.down * moveDistance, Space.World);
-        }
+        key.transform.localScale = originalScale;
+        key.GetComponent<Renderer>().material.color = originalColor;
     }
 }
