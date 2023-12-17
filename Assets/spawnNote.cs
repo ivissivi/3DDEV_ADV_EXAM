@@ -13,6 +13,7 @@ public class SpawnNote : MonoBehaviour
     private Color originalColor;
     private Renderer parentRenderer;
     private int activeObjects = 0;
+    private int spawnedCount = 0; // Track the count of spawned objects for this parent
 
     void Start()
     {
@@ -39,6 +40,10 @@ public class SpawnNote : MonoBehaviour
         GameObject currentNote = Instantiate(notePrefab, transform.position, Quaternion.identity);
         currentNote.transform.localScale = notePrefab.transform.localScale * scaleMultiplier;
         currentNote.transform.position = transform.position;
+
+        // Assign the name of the parent object to the spawned object
+        spawnedCount++; // Increment the count for this spawned object
+        currentNote.name = $"{gameObject.name}_{spawnedCount}"; // Append the count to the name
 
         activeObjects++; // Increment count of active objects
         StartCoroutine(MoveObject(currentNote));
