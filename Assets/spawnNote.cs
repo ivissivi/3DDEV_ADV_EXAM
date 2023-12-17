@@ -9,6 +9,7 @@ public class SpawnNote : MonoBehaviour
     public float destroyCoordinate = -1.3f;
     public float scaleMultiplier = 1.0f;
     public Color parentColor;
+    public KeyCode destructionKey = KeyCode.Z;
 
     private Color originalColor;
     private Renderer parentRenderer;
@@ -28,7 +29,7 @@ public class SpawnNote : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z)) // Change KeyCode to the desired key
+        if (Input.GetKeyDown(destructionKey)) // Change KeyCode to the desired key
         {
             DestroyClosestObject();
         }
