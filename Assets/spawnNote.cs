@@ -12,8 +12,8 @@ public class SpawnNote : MonoBehaviour
 
     private Color originalColor;
     private Renderer parentRenderer;
-    private int activeObjects = 0;
-    private int spawnedCount = 0; // Track the count of spawned objects for this parent
+    private List<GameObject> activeNotes = new List<GameObject>();
+    private int spawnedCount = 0;
 
     void Start()
     {
@@ -26,12 +26,45 @@ public class SpawnNote : MonoBehaviour
         StartCoroutine(SpawnObjectWithDelay());
     }
 
-    IEnumerator SpawnObjectWithDelay()
+    private void Update()
     {
-        while (true)
+        if (Input.GetKeyDown(KeyCode.Z)) // Change KeyCode to the desired key
         {
-            SpawnObject();
-            yield return new WaitForSeconds(3.0f);
+            DestroyClosestObject();
+        }
+    }
+
+    void DestroyClosestObject()
+    {
+        GameObject closestNote = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject note in activeNotes)
+        {
+            float distance = Mathf.Abs(note.transform.position.z - destroyCoordinate);
+
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestNote = note;
+            }
+        }
+
+        if (closestNote != null)
+        {
+            Debug.Log($"Destroying closest object: {closestNote.name}");
+
+            activeNotes.Remove(closestNote); // Remove from the active list
+            Destroy(closestNote); // Mark for destruction
+
+            if (activeNotes.Count == 0)
+            {
+                ResetParentColor();
+            }
+        }
+        else
+        {
+            Debug.Log("No object found to destroy.");
         }
     }
 
@@ -41,17 +74,25 @@ public class SpawnNote : MonoBehaviour
         currentNote.transform.localScale = notePrefab.transform.localScale * scaleMultiplier;
         currentNote.transform.position = transform.position;
 
-        // Assign the name of the parent object to the spawned object
-        spawnedCount++; // Increment the count for this spawned object
-        currentNote.name = $"{gameObject.name}_{spawnedCount}"; // Append the count to the name
+        spawnedCount++;
+        currentNote.name = $"{gameObject.name}_{spawnedCount}";
 
-        activeObjects++; // Increment count of active objects
+        activeNotes.Add(currentNote); // Add to the active list
         StartCoroutine(MoveObject(currentNote));
+    }
+
+    IEnumerator SpawnObjectWithDelay()
+    {
+        while (true)
+        {
+            SpawnObject();
+            yield return new WaitForSeconds(3.0f);
+        }
     }
 
     IEnumerator MoveObject(GameObject obj)
     {
-        while (obj.transform.position.z > destroyCoordinate)
+        while (obj != null && obj.transform.position.z > destroyCoordinate)
         {
             obj.transform.Translate(Vector3.back * speed * Time.deltaTime);
 
@@ -66,11 +107,15 @@ public class SpawnNote : MonoBehaviour
             yield return null;
         }
 
-        Destroy(obj);
-        activeObjects--; // Decrement count of active objects
-        if (activeObjects == 0)
+        if (obj != null)
         {
-            ResetParentColor(); // Reset parent's color if no active objects remain
+            activeNotes.Remove(obj); // Remove from the active list
+            Destroy(obj); // Mark for destruction
+
+            if (activeNotes.Count == 0)
+            {
+                ResetParentColor();
+            }
         }
     }
 
