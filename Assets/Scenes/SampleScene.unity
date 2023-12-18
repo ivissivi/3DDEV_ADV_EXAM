@@ -6572,6 +6572,26 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 145c9f41390f1134882d271a007e4cd4, type: 3}
   moveAmount: 0.0001
   pressedColor: {r: 0, g: 1, b: 0, a: 1}
+--- !u!1 &1655375824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1498248656186478200, guid: 56afaf681c1a5b14fbb02b8efdbad8c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2103237751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1655375828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655375824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6e790c5f2a660429f8381346ae46b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteData: {fileID: 4900000, guid: 7ed3f6d4f1b29ce4c9bde6c3bb72f33a, type: 3}
+  timingMultiplier: 2000
 --- !u!1 &1690891944 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -86507713681861924, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -7632,7 +7652,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1638812911}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1498248656186478200, guid: 56afaf681c1a5b14fbb02b8efdbad8c8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1655375828}
   m_SourcePrefab: {fileID: 100100000, guid: 56afaf681c1a5b14fbb02b8efdbad8c8, type: 3}
 --- !u!1 &2133940715 stripped
 GameObject:
