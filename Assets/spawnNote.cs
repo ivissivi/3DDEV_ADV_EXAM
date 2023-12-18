@@ -23,8 +23,6 @@ public class SpawnNote : MonoBehaviour
         {
             originalColor = parentRenderer.material.color;
         }
-
-        StartCoroutine(SpawnObjectWithDelay());
     }
 
     private void Update()
@@ -69,7 +67,7 @@ public class SpawnNote : MonoBehaviour
         }
     }
 
-    void SpawnObject()
+    public void SpawnObject()
     {
         GameObject currentNote = Instantiate(notePrefab, transform.position, Quaternion.identity);
         currentNote.transform.localScale = notePrefab.transform.localScale * scaleMultiplier;
@@ -80,15 +78,6 @@ public class SpawnNote : MonoBehaviour
 
         activeNotes.Add(currentNote); // Add to the active list
         StartCoroutine(MoveObject(currentNote));
-    }
-
-    IEnumerator SpawnObjectWithDelay()
-    {
-        while (true)
-        {
-            SpawnObject();
-            yield return new WaitForSeconds(3.0f);
-        }
     }
 
     IEnumerator MoveObject(GameObject obj)
