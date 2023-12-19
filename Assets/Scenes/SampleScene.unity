@@ -6772,8 +6772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6e790c5f2a660429f8381346ae46b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteData: {fileID: 4900000, guid: 39f67a0b660deb44fb0cc7ab0c820546, type: 3}
-  timingMultiplier: 3
+  noteData: {fileID: 4900000, guid: 7741102229d78e841b64a9aaac9fec6d, type: 3}
+  timingMultiplier: 1.4
 --- !u!1 &1690891944 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -86507713681861924, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,

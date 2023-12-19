@@ -103,7 +103,11 @@ public class SpawnNote : MonoBehaviour
     {
         yield return new WaitForSeconds(colorChangeDelay);
         GameObject currentNote = Instantiate(notePrefab, transform.position, Quaternion.identity);
-        currentNote.transform.localScale = notePrefab.transform.localScale * scaleMultiplier;
+
+        Vector3 newScale = notePrefab.transform.localScale;
+        newScale.z *= 0.5f;
+        currentNote.transform.localScale = newScale;
+
         currentNote.transform.position = transform.position;
 
         spawnedCount++;
@@ -112,6 +116,7 @@ public class SpawnNote : MonoBehaviour
         activeNotes.Add(currentNote);
         StartCoroutine(MoveObject(currentNote));
     }
+
 
     IEnumerator MoveObject(GameObject obj)
     {
