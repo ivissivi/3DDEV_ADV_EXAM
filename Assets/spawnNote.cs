@@ -84,6 +84,9 @@ public class SpawnNote : MonoBehaviour
                     colorResetCoroutine = StartCoroutine(ResetParentColorWithDelay());
                 }
             }
+
+            // Break the loop after destroying the closest note
+            return;
         }
         else
         {
