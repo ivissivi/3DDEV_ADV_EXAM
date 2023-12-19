@@ -11,25 +11,32 @@ public class SpawnNote : MonoBehaviour
     public Color parentColor;
     public KeyCode destructionKey = KeyCode.Z;
 
+    private Material parentMaterial;
     private Color originalColor;
-    private Renderer parentRenderer;
     private List<GameObject> activeNotes = new List<GameObject>();
     private int spawnedCount = 0;
 
     void Start()
     {
-        parentRenderer = GetComponent<Renderer>();
-        if (parentRenderer != null)
+        Renderer rend = GetComponent<Renderer>();
+        if (rend != null)
         {
-            originalColor = parentRenderer.material.color;
+            parentMaterial = rend.material;
+            originalColor = parentMaterial.color;
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(destructionKey)) // Change KeyCode to the desired key
+        if (Input.GetKeyDown(destructionKey))
         {
             DestroyClosestObject();
+        }
+
+        // Check if there are no active notes and the color has changed
+        if (activeNotes.Count == 0 && parentMaterial.color != originalColor)
+        {
+            ResetParentColor();
         }
     }
 
@@ -53,9 +60,11 @@ public class SpawnNote : MonoBehaviour
         {
             Debug.Log($"Destroying closest object: {closestNote.name}");
 
-            activeNotes.Remove(closestNote); // Remove from the active list
-            Destroy(closestNote); // Mark for destruction
+            activeNotes.Remove(closestNote);
+            Destroy(closestNote);
 
+            // No need to check for parentMaterial.color != originalColor here
+            // Only reset color if there are no more active notes
             if (activeNotes.Count == 0)
             {
                 ResetParentColor();
@@ -76,7 +85,7 @@ public class SpawnNote : MonoBehaviour
         spawnedCount++;
         currentNote.name = $"{gameObject.name}_{spawnedCount}";
 
-        activeNotes.Add(currentNote); // Add to the active list
+        activeNotes.Add(currentNote);
         StartCoroutine(MoveObject(currentNote));
     }
 
@@ -88,10 +97,10 @@ public class SpawnNote : MonoBehaviour
 
             float distance = obj.transform.position.z - destroyCoordinate;
 
-            if (parentRenderer != null)
+            if (parentMaterial != null)
             {
                 float colorChangeFactor = 1.0f - Mathf.Clamp01(distance / 10f);
-                parentRenderer.material.color = Color.Lerp(originalColor, parentColor, colorChangeFactor);
+                parentMaterial.color = Color.Lerp(originalColor, parentColor, colorChangeFactor);
             }
 
             yield return null;
@@ -99,9 +108,10 @@ public class SpawnNote : MonoBehaviour
 
         if (obj != null)
         {
-            activeNotes.Remove(obj); // Remove from the active list
-            Destroy(obj); // Mark for destruction
+            activeNotes.Remove(obj);
+            Destroy(obj);
 
+            // Reset color only if no active notes remain
             if (activeNotes.Count == 0)
             {
                 ResetParentColor();
@@ -111,9 +121,6 @@ public class SpawnNote : MonoBehaviour
 
     void ResetParentColor()
     {
-        if (parentRenderer != null)
-        {
-            parentRenderer.material.color = originalColor;
-        }
+        parentMaterial.color = originalColor;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class midiReader : MonoBehaviour
+public class MidiReader : MonoBehaviour
 {
     public TextAsset noteData; // Reference to your note_data.txt file
     public float timingMultiplier = 1.0f; // Adjustable timing multiplier in the Inspector
@@ -94,7 +94,7 @@ public class midiReader : MonoBehaviour
 
     IEnumerator SpawnWithDelay(SpawnNote spawnNoteScript, float timing)
     {
-        yield return new WaitForSeconds(timing); // Wait for the specified timing in seconds
+        yield return new WaitForSecondsRealtime(timing); // Use WaitForSecondsRealtime for accurate timing
         spawnNoteScript.SpawnObject(); // Spawn the object after the delay
     }
 }
