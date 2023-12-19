@@ -132,6 +132,7 @@ public class SpawnNote : MonoBehaviour
 
         if (obj != null)
         {
+            // Despawn the note when it reaches the destroyCoordinate
             activeNotes.Remove(obj);
             Destroy(obj);
 
