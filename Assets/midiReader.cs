@@ -89,12 +89,8 @@ public class MidiReader : MonoBehaviour
                                         // Calculate the time difference from the start time
                                         float elapsedTime = Time.time - startTime;
 
-                                        // Check if it's time to spawn the note
-                                        while (elapsedTime < timing)
-                                        {
-                                            elapsedTime = Time.time - startTime;
-                                            yield return null; // Wait for the next frame
-                                        }
+                                        // Wait for the specified time to spawn the note
+                                        yield return new WaitForSeconds(timing - elapsedTime);
 
                                         spawnNoteScript.SpawnObject(); // Spawn the object
                                         Debug.Log("Spawned object for MIDI note " + midiNote + " at time " + Time.time);
