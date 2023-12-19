@@ -1274,6 +1274,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 106
+  colorChangeDelay: 0.1
 --- !u!1 &189317269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7556275672212240162, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -1298,6 +1299,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 108
+  colorChangeDelay: 0.1
 --- !u!1 &204736570 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6334522115669559555, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -1366,6 +1368,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 57
+  colorChangeDelay: 0.1
 --- !u!1 &227553804 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7742780737561719692, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -1412,6 +1415,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 44
+  colorChangeDelay: 0.1
 --- !u!1 &239795536 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6877660047810643906, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -1486,6 +1490,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 100
+  colorChangeDelay: 0.1
 --- !u!1 &324181845 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1237816149400669630, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -1595,7 +1600,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5137359, y: -0, z: -0, w: 0.85794836}
-  m_LocalPosition: {x: -0.26, y: 13.79, z: -5.58}
+  m_LocalPosition: {x: -0.26, y: 22.73, z: -6.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1757,6 +1762,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 120
+  colorChangeDelay: 0.1
 --- !u!1 &395151902 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2234811440987334085, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -2097,6 +2103,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 98
+  colorChangeDelay: 0.1
 --- !u!1 &506852731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6159819195323411483, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -2187,6 +2194,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 52
+  colorChangeDelay: 0.1
 --- !u!1 &548614276 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2254504247542753893, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -2448,6 +2456,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 111
+  colorChangeDelay: 0.1
 --- !u!1 &586426169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8819986826784506335, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -2494,6 +2503,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 118
+  colorChangeDelay: 0.1
 --- !u!1 &642028156 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8144394004440419581, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -2540,6 +2550,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 114
+  colorChangeDelay: 0.1
 --- !u!1 &653874541 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -584413233861867849, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -2652,6 +2663,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 116
+  colorChangeDelay: 0.1
 --- !u!1 &719160557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7359278958463129214, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -2742,6 +2754,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 119
+  colorChangeDelay: 0.1
 --- !u!1 &800523148 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3711035973849375546, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -2788,6 +2801,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 121
+  colorChangeDelay: 0.1
 --- !u!1 &820056252 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7324904602054250430, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -2949,6 +2963,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 50
+  colorChangeDelay: 0.1
 --- !u!1 &901849684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 815122810508181336, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -3083,6 +3098,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 104
+  colorChangeDelay: 0.1
 --- !u!1 &928120827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5988881256312858879, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -3107,6 +3123,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 101
+  colorChangeDelay: 0.1
 --- !u!1 &932257295 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2254504247542753893, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -3153,6 +3170,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 112
+  colorChangeDelay: 0.1
 --- !u!1 &956632556 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8144394004440419581, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -3221,6 +3239,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 117
+  colorChangeDelay: 0.1
 --- !u!1 &1022231688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3428531902006917419, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -3289,6 +3308,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 55
+  colorChangeDelay: 0.1
 --- !u!1 &1060416001 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7324904602054250430, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -4700,6 +4720,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 48
+  colorChangeDelay: 0.1
 --- !u!1 &1119256218 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1554193974251969968, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -4746,6 +4767,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 51
+  colorChangeDelay: 0.1
 --- !u!1 &1154582895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1137414348868702924, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -4814,6 +4836,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 105
+  colorChangeDelay: 0.1
 --- !u!1 &1213592748 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7067343630907241678, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -4987,6 +5010,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 46
+  colorChangeDelay: 0.1
 --- !u!1 &1271993466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4010433742624984557, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -5143,6 +5167,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 59
+  colorChangeDelay: 0.1
 --- !u!1 &1375425325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5195,6 +5220,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 93
+  colorChangeDelay: 0.1
 --- !u!23 &1375425328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5291,6 +5317,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 45
+  colorChangeDelay: 0.1
 --- !u!1 &1402662185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1554193974251969968, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -6079,6 +6106,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 115
+  colorChangeDelay: 0.1
 --- !u!1 &1445554147
 GameObject:
   m_ObjectHideFlags: 0
@@ -6171,6 +6199,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 113
+  colorChangeDelay: 0.1
 --- !u!1 &1508376776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3111170871272388349, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -6261,6 +6290,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 91
+  colorChangeDelay: 0.1
 --- !u!1 &1568696250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927519978232386959, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -6329,6 +6359,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 109
+  colorChangeDelay: 0.1
 --- !u!1 &1608512369 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5795845215311118915, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -6375,6 +6406,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 47
+  colorChangeDelay: 0.1
 --- !u!1 &1620866620 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9125750224511326099, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -6659,7 +6691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteData: {fileID: 4900000, guid: 7ed3f6d4f1b29ce4c9bde6c3bb72f33a, type: 3}
-  timingMultiplier: 2000
+  timingMultiplier: 3
 --- !u!1 &1690891944 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -86507713681861924, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -6772,6 +6804,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 99
+  colorChangeDelay: 0.1
 --- !u!1 &1755518456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1365466670015876248, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -7008,6 +7041,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 110
+  colorChangeDelay: 0.1
 --- !u!1 &1854680228 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4878498122401541581, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -7120,6 +7154,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 54
+  colorChangeDelay: 0.1
 --- !u!1 &1882884392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3756390120765671643, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -7558,6 +7593,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 0.17735851, g: 0.023759348, b: 0.15278266, a: 1}
   destructionKey: 103
+  colorChangeDelay: 0.1
 --- !u!1 &2054825925 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4793791746673898885, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
@@ -7604,6 +7640,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   parentColor: {r: 1, g: 0.4117647, b: 0.90588236, a: 1}
   destructionKey: 122
+  colorChangeDelay: 0.1
 --- !u!1 &2088434972 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -445369854190344026, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,

@@ -10,11 +10,13 @@ public class SpawnNote : MonoBehaviour
     public float scaleMultiplier = 1.0f;
     public Color parentColor;
     public KeyCode destructionKey = KeyCode.Z;
+    public float colorChangeDelay = 0.1f; // Adjust the delay to smooth color changes
 
     private Material parentMaterial;
     private Color originalColor;
     private List<GameObject> activeNotes = new List<GameObject>();
     private int spawnedCount = 0;
+    private Coroutine colorResetCoroutine; // Track the color reset coroutine
 
     void Start()
     {
@@ -36,8 +38,20 @@ public class SpawnNote : MonoBehaviour
         // Check if there are no active notes and the color has changed
         if (activeNotes.Count == 0 && parentMaterial.color != originalColor)
         {
-            ResetParentColor();
+            if (colorResetCoroutine == null)
+            {
+                colorResetCoroutine = StartCoroutine(ResetParentColorWithDelay());
+            }
         }
+    }
+
+    IEnumerator ResetParentColorWithDelay()
+    {
+        yield return new WaitForSeconds(colorChangeDelay);
+        parentMaterial.color = originalColor;
+
+        // Reset the coroutine reference after color reset
+        colorResetCoroutine = null;
     }
 
     void DestroyClosestObject()
@@ -63,11 +77,12 @@ public class SpawnNote : MonoBehaviour
             activeNotes.Remove(closestNote);
             Destroy(closestNote);
 
-            // No need to check for parentMaterial.color != originalColor here
-            // Only reset color if there are no more active notes
             if (activeNotes.Count == 0)
             {
-                ResetParentColor();
+                if (colorResetCoroutine == null)
+                {
+                    colorResetCoroutine = StartCoroutine(ResetParentColorWithDelay());
+                }
             }
         }
         else
@@ -78,6 +93,12 @@ public class SpawnNote : MonoBehaviour
 
     public void SpawnObject()
     {
+        StartCoroutine(SpawnObjectDelayed());
+    }
+
+    IEnumerator SpawnObjectDelayed()
+    {
+        yield return new WaitForSeconds(colorChangeDelay);
         GameObject currentNote = Instantiate(notePrefab, transform.position, Quaternion.identity);
         currentNote.transform.localScale = notePrefab.transform.localScale * scaleMultiplier;
         currentNote.transform.position = transform.position;
@@ -111,16 +132,13 @@ public class SpawnNote : MonoBehaviour
             activeNotes.Remove(obj);
             Destroy(obj);
 
-            // Reset color only if no active notes remain
             if (activeNotes.Count == 0)
             {
-                ResetParentColor();
+                if (colorResetCoroutine == null)
+                {
+                    colorResetCoroutine = StartCoroutine(ResetParentColorWithDelay());
+                }
             }
         }
-    }
-
-    void ResetParentColor()
-    {
-        parentMaterial.color = originalColor;
     }
 }

@@ -11,6 +11,7 @@ public class MidiReader : MonoBehaviour
     {
         Dictionary<int, string> numberToKeyMap = new Dictionary<int, string>
         {
+            // Add your MIDI note mapping here
             { 48, "1wC" },
             { 49, "2bCs" },
             { 50, "3wD" },
@@ -50,10 +51,15 @@ public class MidiReader : MonoBehaviour
             { 84, "37wC" },
         };
 
-        // Read note data and associate it with GameObjects
+        StartCoroutine(SpawnNotes(numberToKeyMap));
+    }
+
+    IEnumerator SpawnNotes(Dictionary<int, string> noteMap)
+    {
         if (noteData != null)
         {
             string[] lines = noteData.text.Split('\n');
+            float startTime = Time.time; // Record the start time
 
             foreach (string line in lines)
             {
@@ -65,7 +71,7 @@ public class MidiReader : MonoBehaviour
                     if (int.TryParse(data[0], out midiNote))
                     {
                         string keyName;
-                        if (numberToKeyMap.TryGetValue(midiNote, out keyName))
+                        if (noteMap.TryGetValue(midiNote, out keyName))
                         {
                             GameObject obj = GameObject.Find(keyName);
                             if (obj != null)
@@ -80,8 +86,18 @@ public class MidiReader : MonoBehaviour
                                         // Adjust timing based on timingMultiplier
                                         timing *= timingMultiplier;
 
-                                        StartCoroutine(SpawnWithDelay(spawnNoteScript, timing));
-                                        Debug.Log("Spawned object for MIDI note " + midiNote + " at time " + timing);
+                                        // Calculate the time difference from the start time
+                                        float elapsedTime = Time.time - startTime;
+
+                                        // Check if it's time to spawn the note
+                                        while (elapsedTime < timing)
+                                        {
+                                            elapsedTime = Time.time - startTime;
+                                            yield return null; // Wait for the next frame
+                                        }
+
+                                        spawnNoteScript.SpawnObject(); // Spawn the object
+                                        Debug.Log("Spawned object for MIDI note " + midiNote + " at time " + Time.time);
                                     }
                                 }
                             }
@@ -90,11 +106,5 @@ public class MidiReader : MonoBehaviour
                 }
             }
         }
-    }
-
-    IEnumerator SpawnWithDelay(SpawnNote spawnNoteScript, float timing)
-    {
-        yield return new WaitForSecondsRealtime(timing); // Use WaitForSecondsRealtime for accurate timing
-        spawnNoteScript.SpawnObject(); // Spawn the object after the delay
     }
 }
