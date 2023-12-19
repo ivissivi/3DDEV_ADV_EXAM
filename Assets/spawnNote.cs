@@ -93,7 +93,7 @@ public class SpawnNote : MonoBehaviour
             Debug.Log("No object found to destroy.");
         }
     }
-
+    
     public void SpawnObject()
     {
         StartCoroutine(SpawnObjectDelayed());
@@ -132,7 +132,6 @@ public class SpawnNote : MonoBehaviour
 
         if (obj != null)
         {
-            // Despawn the note when it reaches the destroyCoordinate
             activeNotes.Remove(obj);
             Destroy(obj);
 

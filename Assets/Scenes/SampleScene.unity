@@ -6773,7 +6773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteData: {fileID: 4900000, guid: 39f67a0b660deb44fb0cc7ab0c820546, type: 3}
-  timingMultiplier: 1
+  timingMultiplier: 3
 --- !u!1 &1690891944 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -86507713681861924, guid: 8fb14aec5e9c0cc4e9c13dd26352cee2,
